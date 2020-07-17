@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<title>Guessing game</title>
+<script src="main.js"></script>
+<link rel="shortcut icon" type="image/png" href="questionmark.png" />
+
+<body bgcolor="red">
+    <h1>The amplitudinous guessing game at your service</h1>
+    <hr>
+    <h2>How do you play this game and what is it about?</h2>
+    <p>This game is purely based on your luck in guessing a number between 1 and 100. The system will give you some hints if your guess is too high or too low. Keep guessing to win the game and enjoy!</p>
+    <hr>
+    <h2>Enjoy the guessing game or else slender man will come under your bed while your sleeping...I would do it...</h2>
+    <script>
+        var number = Math.floor(Math.random() * 1000000 + 1);
+
+        function checkGuess() {
+            var guess = document.getElementById("guess").value;
+            var msg = "";
+            if (guess > number)
+                msg = guess + " was too high. Try again"
+            else if (guess < number)
+                msg = guess + " was too low. Try again"
+            else {
+                msg = guess + " was the number! You win 102301021230219302103021039021930 bucks!"
+            }
+            var output = document.getElementById("output");
+            output.innerHTML = msg;
+        }
+    </script>
+    <form>
+        Enter a number between 1 and 1000000:
+        <input type="text" id="guess" size="6">
+        <button type="button" onclick="checkGuess()">Guess!</button>
+    </form>
+    <h3 id="output">Guess a number and press the button</h3>
+    <hr>
+    <h3>Refresh to play again</h3>
+
+
+
+</body>
+
+</html>
